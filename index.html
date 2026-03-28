@@ -733,6 +733,136 @@ footer{
   .chat-name{font-size:14px}
 }
 
+/* ═══════════════════════════════════════════════════
+   FRONTEND DESIGN UPGRADE — UI/UX Enhancement
+   ═══════════════════════════════════════════════════ */
+
+/* ── Grain texture de profundidad ── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  pointer-events:none;z-index:9998;
+  opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:300px 300px;
+  mix-blend-mode:overlay;
+}
+
+/* ── Hero glow — pulsante ── */
+.hero-glow{
+  animation:pulseGlow 5s ease-in-out infinite !important;
+  background:radial-gradient(ellipse,rgba(200,241,53,.10) 0%,rgba(125,249,160,.04) 40%,transparent 70%) !important;
+  width:1100px !important;height:600px !important;
+}
+@keyframes pulseGlow{
+  0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  50%{opacity:.6;transform:translate(-50%,-50%) scale(1.12)}
+}
+
+/* Segundo glow descentrado */
+.hero::before{
+  content:'';
+  position:absolute;top:25%;left:15%;
+  width:500px;height:350px;
+  background:radial-gradient(ellipse,rgba(125,249,160,.04) 0%,transparent 65%);
+  pointer-events:none;
+  animation:driftGlow 8s ease-in-out infinite;
+}
+@keyframes driftGlow{
+  0%,100%{transform:translate(0,0)}
+  33%{transform:translate(30px,-20px)}
+  66%{transform:translate(-20px,30px)}
+}
+
+/* ── Badge — bounce de entrada ── */
+.hero-badge{animation:badgePop .55s cubic-bezier(.34,1.56,.64,1) both !important}
+@keyframes badgePop{from{transform:scale(.75);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ── Stat numbers — gradiente lime→mint ── */
+.stat-num{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Botón primario — shimmer sweep ── */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);
+  transform:translateX(-100%);
+  transition:transform .55s ease;
+}
+.btn-primary:hover::after{transform:translateX(100%)}
+
+/* ── CTA strip — gradiente animado ── */
+.cta-strip{position:relative;overflow:hidden}
+.cta-strip::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(120deg,#c8f135 0%,#a8e020 30%,#7df9a0 60%,#c8f135 100%);
+  background-size:250% 250%;
+  animation:ctaFlow 5s ease infinite;
+}
+.cta-strip>*{position:relative;z-index:1}
+@keyframes ctaFlow{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ── Price card destacado — borde animado ── */
+.price-card.featured{
+  box-shadow:0 0 80px rgba(200,241,53,.12) !important;
+}
+.price-card.featured::before{
+  content:'';
+  position:absolute;inset:-1px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2),transparent 60%,var(--accent));
+  background-size:300% 300%;
+  border-radius:inherit;z-index:-1;
+  opacity:.4;
+  animation:borderFlow 4s linear infinite;
+}
+@keyframes borderFlow{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ── Project cards — glow en hover ── */
+.project-card:hover{
+  box-shadow:0 8px 48px rgba(200,241,53,.1) !important;
+}
+
+/* ── Scroll reveal ── */
+.sr{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.sr.visible{opacity:1;transform:translateY(0)}
+.sr-delay-1{transition-delay:.1s}
+.sr-delay-2{transition-delay:.2s}
+.sr-delay-3{transition-delay:.3s}
+
+/* ── Section titles — gradiente sutil en accent text ── */
+.section-tag{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Nav — borde inferior con glow on scroll ── */
+nav.scrolled{
+  border-bottom-color:rgba(200,241,53,.15) !important;
+  box-shadow:0 1px 30px rgba(0,0,0,.4);
+}
+
+/* ── Marquee items — accent más vivo ── */
+.marquee-item .dot{
+  text-shadow:0 0 8px var(--accent);
+}
+
 </style>
   <!-- SEO Meta Tags -->
   <meta name="description" content="Páginas web profesionales para negocios en Concepción y el Biobío. Tienda online, reservas, catálogos. Desde $14.990/mes. Listo en 24h. Soporte por WhatsApp.">
@@ -2119,6 +2249,34 @@ async function callGroq() {
   if (data.error) throw new Error(data.error);
   return data.response;
 }
+</script>
+
+<script>
+/* ── UI/UX Upgrade: Scroll Reveal + Nav scroll effect ── */
+(function(){
+  // Nav glow on scroll
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function(){
+    nav && nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  // Scroll reveal — solo secciones bajo el hero
+  var targets = document.querySelectorAll(
+    '#proyectos, #pyme, #planes, #mantenimiento, #faq, .section-header, .bento, .pricing-grid, .maint-grid, .projects-grid'
+  );
+  targets.forEach(function(el){ el.classList.add('sr'); });
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
+
+  targets.forEach(function(el){ obs.observe(el); });
+})();
 </script>
 </body>
 </html>
