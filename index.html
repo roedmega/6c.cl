@@ -355,7 +355,7 @@ nav{
 }
 .bento-card.dark-card{background:var(--bg3)}
 
-.bento-icon{font-size:32px;margin-bottom:16px;display:block}
+.bento-img{width:60px;height:60px;border-radius:10px;object-fit:cover;margin-bottom:16px;display:block}
 .bento-title{font-size:18px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px}
 .bento-desc{font-size:13px;line-height:1.6;color:var(--muted)}
 .accent-card .bento-desc{color:rgba(255,255,255,.8)}
@@ -457,7 +457,7 @@ nav{
   transition:all .2s;
 }
 .maint-card:hover{border-color:var(--accent-border);box-shadow:var(--shadow-md)}
-.maint-icon{font-size:28px;margin-bottom:14px;display:block}
+.maint-img{width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:14px;display:block}
 .maint-name{font-size:16px;font-weight:700;margin-bottom:6px}
 .maint-price{
   font-family:var(--mono);
@@ -1310,37 +1310,37 @@ nav.scrolled{
   </div>
   <div class="bento">
     <div class="bento-card wide accent-card">
-      <span class="bento-icon">🤖</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=120&q=75&auto=format&fit=crop" alt="IA">
       <div class="bento-title">Asistente IA para tu negocio</div>
       <div class="bento-desc">Chatbot entrenado con tu catálogo y FAQ. Responde clientes 24/7 en tu sitio y por WhatsApp sin intervención humana.</div>
     </div>
     <div class="bento-card">
       <span class="bento-soon">Q3 2026</span>
-      <span class="bento-icon">📊</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=120&q=75&auto=format&fit=crop" alt="Analytics">
       <div class="bento-title">Dashboard Analytics</div>
       <div class="bento-desc">Métricas reales de tus visitas, conversiones y ventas en tiempo real.</div>
     </div>
     <div class="bento-card">
       <span class="bento-soon">Q3 2026</span>
-      <span class="bento-icon">📱</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=120&q=75&auto=format&fit=crop" alt="App Móvil">
       <div class="bento-title">App Móvil</div>
       <div class="bento-desc">Tu tienda en una app iOS y Android descargable desde las tiendas oficiales.</div>
     </div>
     <div class="bento-card dark-card">
       <span class="bento-soon">Q4 2026</span>
-      <span class="bento-icon">💳</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=120&q=75&auto=format&fit=crop" alt="Suscripciones">
       <div class="bento-title">Suscripciones y membresías</div>
       <div class="bento-desc">Cobra recurrente a tus clientes. Ideal para servicios, clubes y plataformas de contenido.</div>
     </div>
     <div class="bento-card">
       <span class="bento-soon">Q4 2026</span>
-      <span class="bento-icon">🏥</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=120&q=75&auto=format&fit=crop" alt="Agenda Médica">
       <div class="bento-title">Agenda Médica</div>
       <div class="bento-desc">Citas online para consultorios, dentistas y clínicas veterinarias.</div>
     </div>
     <div class="bento-card wide dark-card">
       <span class="bento-soon">2027</span>
-      <span class="bento-icon">🏪</span>
+      <img class="bento-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=120&q=75&auto=format&fit=crop" alt="Marketplace">
       <div class="bento-title">Marketplace multivendedor</div>
       <div class="bento-desc">Un marketplace completo donde múltiples vendedores pueden vender en tu plataforma. Tú cobras comisión automáticamente por cada venta. Ideal para ferias virtuales, galerías comerciales y mercados locales.</div>
     </div>
@@ -1422,22 +1422,22 @@ nav.scrolled{
     <!-- Por qué elegirnos -->
     <div class="pyme-grid-4">
       <div style="background:var(--card);padding:32px;border:1px solid var(--border)">
-        <div style="font-size:32px;margin-bottom:14px">⚡</div>
+        <img src="https://images.unsplash.com/photo-1468779036391-52341f60b55d?w=112&q=75&auto=format&fit=crop" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:14px;display:block" alt="Rápido">
         <div style="font-size:16px;font-weight:700;margin-bottom:8px">Listo en 24 horas</div>
         <div style="font-size:13px;color:var(--muted);line-height:1.65">Tu negocio online en un día. Sin esperar semanas ni meses como con agencias tradicionales.</div>
       </div>
       <div style="background:var(--card);padding:32px;border:1px solid var(--border)">
-        <div style="font-size:32px;margin-bottom:14px">🔒</div>
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=112&q=75&auto=format&fit=crop" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:14px;display:block" alt="Sin contratos">
         <div style="font-size:16px;font-weight:700;margin-bottom:8px">Sin contratos largos</div>
         <div style="font-size:13px;color:var(--muted);line-height:1.65">Mes a mes. Cancelas cuando quieras sin multas ni letra chica. Tu plata, tus reglas.</div>
       </div>
       <div style="background:rgba(200,241,53,.06);padding:32px;border:1px solid rgba(200,241,53,.2)">
-        <div style="font-size:32px;margin-bottom:14px">🇨🇱</div>
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=112&q=75&auto=format&fit=crop" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:14px;display:block" alt="Chile">
         <div style="font-size:16px;font-weight:700;margin-bottom:8px">100% chileno</div>
         <div style="font-size:13px;color:var(--muted);line-height:1.65">Precios en pesos, soporte en español, pagos con MercadoPago. Entendemos tu negocio.</div>
       </div>
       <div style="background:var(--card);padding:32px;border:1px solid var(--border)">
-        <div style="font-size:32px;margin-bottom:14px">📱</div>
+        <img src="https://images.unsplash.com/photo-1592899677977-9c10002761ba?w=112&q=75&auto=format&fit=crop" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:14px;display:block" alt="WhatsApp">
         <div style="font-size:16px;font-weight:700;margin-bottom:8px">Soporte por WhatsApp</div>
         <div style="font-size:13px;color:var(--muted);line-height:1.65">Escribes por WhatsApp y te respondemos. Sin tickets, sin formularios, sin esperas.</div>
       </div>
@@ -1508,7 +1508,7 @@ nav.scrolled{
           </div>
         </div>
         <div style="background:var(--card);padding:32px;border:1px solid var(--border)">
-          <div style="font-size:28px;margin-bottom:12px">💬</div>
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=112&q=75&auto=format&fit=crop" style="width:56px;height:56px;border-radius:10px;object-fit:cover;margin-bottom:12px;display:block" alt="Consulta">
           <div style="font-size:16px;font-weight:700;margin-bottom:8px">¿No sabes por dónde partir?</div>
           <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px">Cuéntanos tu negocio y te recomendamos el proyecto y plan ideal. Sin costo, sin compromiso.</div>
           <button onclick="openModal('pyme-consulta','Consulta PYME Gratis','Gratis')" style="background:transparent;color:var(--accent);border:1px solid var(--accent-border);padding:12px 24px;border-radius:10px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;width:100%" onmouseover="this.style.background='var(--accent-light)'" onmouseout="this.style.background='transparent'">Consulta gratis →</button>
@@ -1618,7 +1618,7 @@ nav.scrolled{
   </div>
   <div class="maint-grid">
     <div class="maint-card">
-      <span class="maint-icon">🔧</span>
+      <img class="maint-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=112&q=75&auto=format&fit=crop" alt="Plan Básico">
       <div class="maint-name">Básico</div>
       <div class="maint-price">$4.990<small style="font-size:14px;color:var(--muted)">/mes</small></div>
       <div class="maint-sub">Tranquilidad mensual</div>
@@ -1631,7 +1631,7 @@ nav.scrolled{
       <button class="price-btn default" style="margin-top:24px;border-radius:12px" onclick="openModal('mant-basico','Mantención Básica','$4.990/mes')">Contratar</button>
     </div>
     <div class="maint-card" style="border-color:var(--accent);background:var(--bg3)">
-      <span class="maint-icon">⚡</span>
+      <img class="maint-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=112&q=75&auto=format&fit=crop" alt="Plan Estándar">
       <div class="maint-name">Estándar</div>
       <div class="maint-price">$9.990<small style="font-size:14px;color:var(--muted)">/mes</small></div>
       <div class="maint-sub">Recomendado para activos</div>
@@ -1645,7 +1645,7 @@ nav.scrolled{
       <button class="price-btn highlight" style="margin-top:24px;border-radius:12px" onclick="openModal('mant-std','Mantención Estándar','$9.990/mes')">Contratar</button>
     </div>
     <div class="maint-card">
-      <span class="maint-icon">🚀</span>
+      <img class="maint-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=112&q=75&auto=format&fit=crop" alt="Plan Premium">
       <div class="maint-name">Premium</div>
       <div class="maint-price">$19.990<small style="font-size:14px;color:var(--muted)">/mes</small></div>
       <div class="maint-sub">Máxima tranquilidad</div>
@@ -1805,7 +1805,7 @@ nav.scrolled{
       <div class="plan-price" id="sum-price">—</div>
     </div>
     <button class="pay-submit" onclick="submitForm()" id="pay-btn">Enviar solicitud →</button>
-    <div class="pay-note">📱 Te contactamos por WhatsApp en menos de 2 horas hábiles</div>
+    <div class="pay-note">Te contactamos por WhatsApp en menos de 2 horas hábiles</div>
   </div>
 </div>
 
